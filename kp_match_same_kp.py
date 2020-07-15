@@ -181,7 +181,7 @@ def SIFT(img1,img2,args,kp_num):  #SIFT NO RANSAC
 
   is_show=False
 
-  ##show keypoint##
+  # show keypoint
   if args.match_type == "nn":
      bf = cv2.BFMatcher(cv2.NORM_L2, crossCheck=False)
      if len(kp1) >= 2 and len(kp2) >= 2:
@@ -248,7 +248,7 @@ def del_repeat(total_left_kp, total_right_kp):
         total_right_kp.append((unique[j][2],unique[j][3]))
     return total_left_kp,total_right_kp
 
-#删除重复检测特征点
+# delete duplicate detection keypoints
 def detectPoint(detectKp):
     uniquePoint = []
     overlapKp = 0
@@ -269,7 +269,6 @@ def detectPointV2(detectKp):
             uniquePoint.append(kpPt)
     return len(uniquePoint)
 
-#在子图中进行sift特征点匹配并返回总的特征点个数
 def subimg_match_same_kp(img_left,img_right,img_left_txt,img_right_txt,MAX_XY,keypoint_type,args):
     box_coord_left=np.loadtxt(img_left_txt, skiprows=1, delimiter=',')
     box_coord_right=np.loadtxt(img_right_txt, skiprows=1, delimiter=',')
@@ -277,7 +276,7 @@ def subimg_match_same_kp(img_left,img_right,img_left_txt,img_right_txt,MAX_XY,ke
     img_left=cv2.imread(img_left)
     img_right=cv2.imread(img_right)
 
-    #约束sub_img的大小
+    # Constrain the size of the landmark
     MAX_XY_temp=[]
     for i in range(len(MAX_XY)):
         MAX_XY[i][0] = int(MAX_XY[i][0])
@@ -298,7 +297,7 @@ def subimg_match_same_kp(img_left,img_right,img_left_txt,img_right_txt,MAX_XY,ke
         MAX_XY[i][1] = int(MAX_XY[i][1])
         imgcrop_left = img_left[int(box_coord_left[MAX_XY[i][0]][2]):int(box_coord_left[MAX_XY[i][0]][4]),int(box_coord_left[MAX_XY[i][0]][1]):int(box_coord_left[MAX_XY[i][0]][3])]
         imgcrop_right = img_right[int(box_coord_right[MAX_XY[i][1]][2]):int(box_coord_right[MAX_XY[i][1]][4]),int(box_coord_right[MAX_XY[i][1]][1]):int(box_coord_right[MAX_XY[i][1]][3])]
-        kp_num = int(float(wholeNum)/len(MAX_XY)+0.5)  #keep the same keypoint number
+        kp_num = int(float(wholeNum)/len(MAX_XY)+0.5)  # keep the same keypoint number
 
         if keypoint_type == "orb":
            returnKpLeft, returnKpRight = ORBKeyPoint(imgcrop_left,imgcrop_right,kp_num)
@@ -318,7 +317,7 @@ def subimg_match_same_kp(img_left,img_right,img_left_txt,img_right_txt,MAX_XY,ke
         DetectTotalKpLeft.append(returnKpLeft)
         DetectTotalKpRight.append(returnKpRight)
 
-    ##统计单帧提取的特征点个数
+    ## Count the number of keypoints extracted from a single frame
     DetectTotalKpRight = detectPoint(DetectTotalKpRight)
     DetectTotalKpLeft = detectPoint(DetectTotalKpLeft)
 
@@ -328,7 +327,7 @@ def subimg_match_same_kp(img_left,img_right,img_left_txt,img_right_txt,MAX_XY,ke
    # print("The overLap Rate After Detect Right KeyPoint:"+str(overLapRateRight))
    # print("The OverLap Rate After Detect Left KeyPoint:"+str(overLapRateLeft))
 
-    #这里是第二次提取特征点
+    # To extract the keypoints again
     ##########################################################################################################
     overLapRate = float(overLapRateLeft+overLapRateRight)/2
 
@@ -402,7 +401,7 @@ def subimg_match_same_kp(img_left,img_right,img_left_txt,img_right_txt,MAX_XY,ke
     total_left_kp = np.delete(total_left_kp, 0, axis=0)
     total_right_kp = np.delete(total_right_kp, 0, axis=0)
 
-    ##统计单帧提取的特征点个数
+    ## Count the number of keypoints extracted from a single frame
     DetectTotalKpRight = detectPoint(DetectTotalKpRight)
     DetectTotalKpLeft = detectPoint(DetectTotalKpLeft)
 

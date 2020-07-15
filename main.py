@@ -38,7 +38,7 @@ parser.add_argument('-tsfr', "--save_final_result", type=bool, default=True, hel
 
 
 args = parser.parse_args()
-device=torch.device('cuda:0') #调用gpu:0
+device=torch.device('cuda:0') #use 0 gpu
 mynet = models.alexnet(pretrained=True).cuda(device) #default network
 if args.network_type == "vgg16":
    mynet = models.vgg16(pretrained=True).cuda(device)
@@ -52,12 +52,11 @@ elif args.network_type == "resnet":
    mynet = models.resnet18(pretrained=True).cuda(device)
 mynet.eval()
 
-######class#########
 class generate_des:
     def __init__(self, net, img_tensor, mini_batch_size=args.network_batch_size, net_type=args.network_type):
         self.descriptor = self.extract_batch_conv_features(net, img_tensor, mini_batch_size, net_type)
 
-    #####extract batch conv features#####
+    # extract batch conv features
     def extract_batch_conv_features(self, net, input_data, mini_batch_size, net_type):
         batch_number = int(len(input_data)/mini_batch_size)
         descriptor_init = self.extract_conv_features(net, input_data[:mini_batch_size], net_type).cpu().detach().numpy()
@@ -66,20 +65,20 @@ class generate_des:
             mini_batch = input_data[mini_batch_size*i:mini_batch_size*(i+1)]
             temp_descriptor = self.extract_conv_features(net, mini_batch, net_type).cpu().detach().numpy()
             descriptor_init = np.vstack((descriptor_init, temp_descriptor))
-        #end=time.time()
-        #print('加载数据耗时:'+str(end-start))
-        #####avoid the last mini_batch is NULL######
+        # end=time.time()
+        # print('load data cost:'+str(end-start))
+        # avoid the last mini_batch is NULL
         if (len(input_data) % mini_batch_size == 0):
             return descriptor_init 
         descriptor = self.extract_conv_features(net, input_data[mini_batch_size*batch_number:len(input_data)+1], net_type).cpu().detach().numpy()
-        #####aviod the batch_number=0######
+        # aviod the batch_number equals to 0
         if batch_number > 0:
             descriptor = np.vstack((descriptor_init, descriptor))
         return descriptor
 
-    #####extract conv features#####
+    # extract conv features
     def extract_conv_features(self, net, input_data,net_type):
-        if net_type.startswith('alexnet'):####alexnet is in forward.py
+        if net_type.startswith('alexnet'):# alexnet is in forward.py
             x = alexnet(net, input_data)
         elif net_type.startswith('vgg16'):
             x = vgg16(net, input_data)
@@ -93,24 +92,21 @@ class generate_des:
             x = resnet(net, input_data)
         return x
 
-#####分批进行计算.如果一起读入，数据太大，读取时间太长，不能充分利用GPU.
 def compute_batch_descriptor(net,input_data, mini_batch_size):
-    batch_number = int(len(input_data)/mini_batch_size)  #####计算将数据分成了多少块
-    descriptor_init = generate_des(mynet, input_data[:mini_batch_size].cuda(device)).descriptor ####第一个mini_batch
+    batch_number = int(len(input_data)/mini_batch_size)
+    descriptor_init = generate_des(mynet, input_data[:mini_batch_size].cuda(device)).descriptor
     start=time.time()
-    ######循环读入mini_batch#######
     for i in range(1, batch_number):
         mini_batch = input_data[mini_batch_size*i:mini_batch_size*(i+1)]
         temp_descriptor = generate_des(mynet, mini_batch.cuda(device)).descriptor
-        descriptor_init = np.vstack((descriptor_init, temp_descriptor)) ####将描述符叠起来
+        descriptor_init = np.vstack((descriptor_init, temp_descriptor))
     end = time.time()
-    #print("计算描述符共耗时:"+str(end-start))
-    #####avoid the last mini_batch is NULL######
+    # print("extract descriptor cost:"+str(end-start))
+    # avoid the last mini_batch is NULL
     if (len(input_data)%mini_batch_size==0):
         return descriptor_init
-    #####计算最后一块，可能为0，数据块小于mini_batch的大小
     descriptor=generate_des(net, input_data[mini_batch_size*batch_number:len(input_data)+1].cuda(device)).descriptor
-    #####aviod the batch_number=0######
+    # aviod the batch_number equals 0
     if batch_number > 0:
         descriptor = np.vstack((descriptor_init, descriptor))
     return descriptor    
@@ -162,27 +158,25 @@ def del_repeat(total_left_kp, total_right_kp):
            unique.append(total[i])
     return len(unique)
 
-#先匹配路标上，然后在路标的基础上进行特征点的匹配
 def Landmark_match_same_kp(img_left, img_right, img_left_txt, img_right_txt, keypoint_type, img_num):
 
     img_tensor_left=generate_subimage(img_left_txt, img_left, args.landmark_number, args.model_img_size)
     img_tensor_right=generate_subimage(img_right_txt, img_right, args.landmark_number, args.model_img_size)
     desc_left=compute_batch_descriptor(mynet, img_tensor_left, args.data_batch_size)
     desc_right=compute_batch_descriptor(mynet, img_tensor_right, args.data_batch_size)
-    dis_matrix=compute_des_cos_dis(desc_left, desc_right)  #matrx of distance
+    dis_matrix=compute_des_cos_dis(desc_left, desc_right)  # matrx of distance
     MAX_XY=compute_max_xy(dis_matrix, img_left_txt, img_right_txt)
 
-    #def subimg_match_same_kp(img_left, img_right, img_left_txt, img_right_txt, MAX_XY, keypoint_type,match_type,kpNum,subimg_show)
-    ########### match with same keypoint ###########
+    # def subimg_match_same_kp(img_left, img_right, img_left_txt, img_right_txt, MAX_XY, keypoint_type,match_type,kpNum,subimg_show)
+    # match with same keypoint
     total_left_kp, total_right_kp, OriginKpNum = subimg_match_same_kp(img_left, img_right, img_left_txt, img_right_txt, MAX_XY, keypoint_type, args)
 
-    ##############################################
     total_left_kp, total_right_kp = Fundamental(total_left_kp, total_right_kp)
     img_left = cv2.imread(img_left)
     img_right = cv2.imread(img_right)
 
     drawMatch(img_left, img_right, total_left_kp, total_right_kp, str(str(img_num)+"LM: "+keypoint_type), args)
-    inliers = del_repeat(total_left_kp, total_right_kp)  # 去掉重复的点
+    inliers = del_repeat(total_left_kp, total_right_kp)  # remove duplicate keypoints
     return inliers, total_left_kp, total_right_kp, OriginKpNum
 
 def Origin_match(img_left,img_right,keypoint_type,img_num):
@@ -261,8 +255,8 @@ def calculate_inliers(img_number,A,B):
     return ORB_LM,ORB,SIFT_LM,SIFT,RootSIFT_LM,RootSIFT
 
 if __name__=="__main__":
-    imgNumber1 = args.true_positive_number #正样本数据集
-    imgNumber2 = args.false_positive_number #负样本数据集
+    imgNumber1 = args.true_positive_number  # true positive dataset
+    imgNumber2 = args.false_positive_number  # false negative dataset
 
     True_ORB_LM, True_ORB,True_SIFT_LM, True_SIFT, True_RootSIFT_LM, True_RootSIFT = calculate_inliers(imgNumber1, 'AY', 'BY')
     args.show_final_result = False
@@ -300,7 +294,6 @@ if __name__=="__main__":
     plt.xticks(fontsize=12)
     plt.yticks(fontsize=12)
 
-    ## 设置坐标标签字体大小
     plt.xlabel('Recall'+str(args.dataset_type), fontsize=12)
     plt.ylabel('Precision', fontsize=12)
     plt.grid(linestyle=':', alpha=1, linewidth=0.8)

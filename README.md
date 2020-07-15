@@ -25,8 +25,21 @@ This project is built in Python and requires no training, so you can directly ru
         python potential_loop_closure.py -dt UAcampus -in 647 -dth 0.7
         ```
      Using the `python potential_loop_closure.py -h` to check the meaning of the variables, note that the `AY`,`BY` means the true positive in query and train image respectively, the `AN`, `BN` means the false positive in query and train image, respectively.
-
-  2. Imporve keypoint matching using a landmark-based image representation in potential loop closure dataset:
+  2. Using `BING` algorithm to extract the landmark from potential loop closure dataset and the directory structure as follows
+        ```
+        └── UAcampus
+          ├── AB
+          │   ├── AN
+          │   ├── AY
+          │   ├── BN
+          │   └── BY
+          └── AB_txt
+              ├── AN
+              ├── AY
+              ├── BN
+              └── BY
+        ```
+  3. Imporve keypoint matching using a landmark-based image representation in potential loop closure dataset:
         ```bash
         python main.py -dt UAcampus -ks low -tp 630 -fp 10
         ```

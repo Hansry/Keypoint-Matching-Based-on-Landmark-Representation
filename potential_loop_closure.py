@@ -26,7 +26,7 @@ parser.add_argument('-is', "--img_suffix", type=str, default=".jpg", choices=[".
 
 args = parser.parse_args()
 device=torch.device('cuda:0')
-mynet = models.alexnet(pretrained=True).cuda(device) #default network
+mynet = models.alexnet(pretrained=True).cuda(device) # default network
 if args.network_type == "vgg16":
    mynet = models.vgg16(pretrained=True).cuda(device)
 elif args.network_type == "vgg19":
@@ -41,12 +41,12 @@ mynet.eval()
 img_to_tensor = transforms.ToTensor()
 
 
-#ConvNet feature extraction class
+# convNet feature extraction class
 class generate_des:
     def __init__(self, net, img_tensor, mini_batch_size=8, net_type=args.network_type):
         self.descriptor = self.extract_batch_conv_features(net, img_tensor, mini_batch_size, net_type)
 
-    #extract batch ConvNet features
+    # extract batch ConvNet features
     def extract_batch_conv_features(self, net, input_data, mini_batch_size, net_type):
 
         batch_number = int(len(input_data)/mini_batch_size)
@@ -57,17 +57,17 @@ class generate_des:
             temp_descriptor = self.extract_conv_features(net, mini_batch, net_type).cpu().detach().numpy()
             descriptor_init = np.vstack((descriptor_init, temp_descriptor))
 
-        #avoid the last mini_batch is NULL
+        # avoid the last mini_batch is NULL
         if (len(input_data) % mini_batch_size == 0):
             return descriptor_init 
         descriptor = self.extract_conv_features(net, input_data[mini_batch_size*batch_number:len(input_data)+1], net_type).cpu().detach().numpy()
 
-        #aviod the batch_number equal to zero
+        # aviod the batch_number equal to zero
         if batch_number > 0:
             descriptor = np.vstack((descriptor_init, descriptor))
         return descriptor
 
-    #extract ConvNet features
+    # extract ConvNet features
     def extract_conv_features(self, net, input_data, net_type):
 
         if net_type.startswith('alexnet'):
@@ -106,7 +106,7 @@ def change_images_to_tensor(Img_path):
     print('Loading image time:'+str(end-start))
     return img_tensor
 
-#compute batch ConvNet descriptor for potential loop closure pair generation
+# compute batch ConvNet descriptor for potential loop closure pair generation
 def compute_batch_descriptor(net,input_data,mini_batch_size):
     batch_number = int(len(input_data)/mini_batch_size)
     descriptor_init = generate_des(mynet, input_data[:mini_batch_size].cuda(device)).descriptor

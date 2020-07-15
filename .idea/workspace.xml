@@ -2,26 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6a78562-5c6b-4225-bd95-16b35212304d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forward.py" beforeDir="false" afterPath="$PROJECT_DIR$/forward.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gist/LMgist.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gist/demo1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gist/demo2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gist/demoGist.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gist/imresizecrop.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gist/showGist.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gist/test.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gist/untitled2.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inlier_pr_uacampus.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kp_match.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kp_match_regin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kp_match_same_kp.py" beforeDir="false" afterPath="$PROJECT_DIR$/kp_match_same_kp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lcd.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lcd_gist.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_gist_u.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_gist_v.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_u.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_v.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/potential_loop_closure.py" beforeDir="false" afterPath="$PROJECT_DIR$/potential_loop_closure.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +23,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3075">
-              <caret line="220" column="28" selection-start-line="220" selection-start-column="28" selection-end-line="220" selection-end-column="28" />
+            <state relative-caret-position="4395">
+              <caret line="293" column="27" lean-forward="true" selection-start-line="293" selection-start-column="27" selection-end-line="293" selection-end-column="27" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -49,20 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inlier_pr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="-208">
               <caret line="6" column="79" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="79" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/inlier_pr_uacampus.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -73,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kp_match_same_kp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1590">
-              <caret line="111" selection-start-line="110" selection-end-line="114" selection-end-column="48" />
+            <state relative-caret-position="-162">
+              <caret line="434" lean-forward="true" selection-start-line="434" selection-end-line="434" />
               <folding>
                 <element signature="e#22#40#0" expanded="true" />
               </folding>
@@ -83,19 +57,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kp_match_mask.py">
+        <entry file="file://$PROJECT_DIR$/potential_loop_closure.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="3120">
+              <caret line="241" column="21" lean-forward="true" selection-start-line="241" selection-start-column="21" selection-end-line="241" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="90">
+                <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/keypoint_mask.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="26" />
+            <state relative-caret-position="165">
+              <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -106,7 +95,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generate_subimg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="15">
               <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
               <folding>
                 <element signature="e#23#33#0" expanded="true" />
@@ -118,10 +107,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compute_distance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="-163">
               <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/forward.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1903">
+              <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -189,10 +190,11 @@
         <option value="$PROJECT_DIR$/lcd.py" />
         <option value="$PROJECT_DIR$/run_gist_u.py" />
         <option value="$PROJECT_DIR$/scripts/inlier_pr_uacampus_copy.py" />
-        <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/kp_match_same_kp.py" />
         <option value="$PROJECT_DIR$/kp_match_mask.py" />
         <option value="$PROJECT_DIR$/scripts/keypoint_mask.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/kp_match_same_kp.py" />
+        <option value="$PROJECT_DIR$/potential_loop_closure.py" />
       </list>
     </option>
   </component>
@@ -216,11 +218,6 @@
             <path>
               <item name="landmark-based_keypoint_matching" type="b2602c69:ProjectViewProjectNode" />
               <item name="landmark-based_keypoint_matching" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="landmark-based_keypoint_matching" type="b2602c69:ProjectViewProjectNode" />
-              <item name="landmark-based_keypoint_matching" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -355,17 +352,19 @@
       <workItem from="1590808200621" duration="11496000" />
       <workItem from="1590821685579" duration="8389000" />
       <workItem from="1590985346678" duration="2019000" />
+      <workItem from="1594820611572" duration="189000" />
+      <workItem from="1594820834877" duration="727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152171000" />
+    <option name="totallyTimeSpent" value="153087000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-4" width="1303" height="773" extended-state="6" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15139443" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16095617" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -419,7 +418,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kp_match_same_kp.py</url>
-          <line>306</line>
+          <line>305</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -451,26 +450,6 @@
     <entry file="file://$PROJECT_DIR$/inlier_pr_uacampus.py" />
     <entry file="file://$PROJECT_DIR$/run_u.py" />
     <entry file="file://$PROJECT_DIR$/lcd.py" />
-    <entry file="file://$PROJECT_DIR$/potential_loop_closure.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="174" column="49" lean-forward="true" selection-start-line="174" selection-start-column="49" selection-end-line="174" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forward.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run_gist_u.py" />
     <entry file="file://$PROJECT_DIR$/scripts/inlier_pr_uacampus_copy.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -482,20 +461,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/kp_match_mask.py" />
+    <entry file="file://$PROJECT_DIR$/scripts/keypoint_mask.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3075">
-          <caret line="220" column="28" selection-start-line="220" selection-start-column="28" selection-end-line="220" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inlier_pr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="79" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="79" />
+        <state relative-caret-position="165">
+          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -504,8 +474,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/inlier_pr_uacampus.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
+        <state relative-caret-position="-357">
           <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compute_distance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-163">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forward.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1903">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate_subimg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inlier_pr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-208">
+          <caret line="6" column="79" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="79" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -514,48 +524,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kp_match_same_kp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1590">
-          <caret line="111" selection-start-line="110" selection-end-line="114" selection-end-column="48" />
+        <state relative-caret-position="-162">
+          <caret line="434" lean-forward="true" selection-start-line="434" selection-end-line="434" />
           <folding>
             <element signature="e#22#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kp_match_mask.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate_subimg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        <state relative-caret-position="4395">
+          <caret line="293" column="27" lean-forward="true" selection-start-line="293" selection-start-column="27" selection-end-line="293" selection-end-column="27" />
           <folding>
-            <element signature="e#23#33#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compute_distance.py">
+    <entry file="file://$PROJECT_DIR$/potential_loop_closure.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="3120">
+          <caret line="241" column="21" lean-forward="true" selection-start-line="241" selection-start-column="21" selection-end-line="241" selection-end-column="21" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/keypoint_mask.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="90">
+            <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

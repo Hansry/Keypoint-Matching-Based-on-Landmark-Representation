@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/linear.cpp
+math.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdarg.h
+-
+locale.h
+-
+linear.h
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/linear.h
+tron.h
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/tron.h
+
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/linear.h
+
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/tron.cpp
+math.h
+-
+stdio.h
+-
+string.h
+-
+stdarg.h
+-
+tron.h
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/tron.h
+
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/tron.h
+

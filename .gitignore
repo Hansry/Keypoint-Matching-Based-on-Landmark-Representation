@@ -1,0 +1,12 @@
+*.kdev4
+*.opensdf
+*.pdb
+*.sdf
+*.suo
+*.swp
+*.zip
+x64/
+dataset/
+dataset*/
+*result/
+resultImg*/

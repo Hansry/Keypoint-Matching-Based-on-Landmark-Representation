@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/blas/blas.h
+blasp.h
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/blas/blasp.h
+
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/blas/blasp.h
+
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/blas/daxpy.c
+blas.h
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/blas/blas.h
+
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/blas/ddot.c
+blas.h
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/blas/blas.h
+
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/blas/dnrm2.c
+math.h
+-
+blas.h
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/blas/blas.h
+
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/blas/dscal.c
+blas.h
+/home/hansry/landmark_keypoint_matching/bing/LibLinear/blas/blas.h
+

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libliblinear.a  CMakeFiles/liblinear.dir/linear.cpp.o CMakeFiles/liblinear.dir/tron.cpp.o CMakeFiles/liblinear.dir/blas/daxpy.c.o CMakeFiles/liblinear.dir/blas/ddot.c.o CMakeFiles/liblinear.dir/blas/dnrm2.c.o CMakeFiles/liblinear.dir/blas/dscal.c.o
+/usr/bin/ranlib libliblinear.a
